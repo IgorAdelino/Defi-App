@@ -29,6 +29,10 @@ export default function Home() {
     try {
       const { ethereum } = window;
 
+      if(!ethereum){
+        console.log("Please install metamask")
+      }
+
       const accounts = await ethereum.request({method: 'eth_accounts'})
       console.log("accounts: ", accounts);
 
